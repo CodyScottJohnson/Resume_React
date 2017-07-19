@@ -78,7 +78,7 @@ const config = {
           'isomorphic-style-loader',
           `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=` +
           `${DEBUG ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]'}`,
-          'postcss-loader?parser=postcss-scss',
+          'postcss-loader?parser=postcss-scss'
         ],
       }, {
         test: /\.json$/,
@@ -103,6 +103,8 @@ const config = {
     return [
       require('postcss-import')({ addDependencyTo: bundler }),
       require('precss')(),
+      require('postcss-mixins')(),
+      require('postcss-conditionals'),
       require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
     ];
   },

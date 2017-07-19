@@ -6,26 +6,31 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
+import { Footer } from 'react-materialize';
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.scss';
 import Link from '../Link';
 
-function Footer() {
+function Custom_Footer() {
   return (
-    <div className={s.root}>
-      <div className={s.container}>
-        <span className={s.text}>© Your Company</span>
-        <span className={s.spacer}>·</span>
-        <Link className={s.link} to="/">Home</Link>
-        <span className={s.spacer}>·</span>
-        <Link className={s.link} to="/privacy">Privacy</Link>
-        <span className={s.spacer}>·</span>
-        <Link className={s.link} to="/not-found">Not Found</Link>
-      </div>
-    </div>
+    <Footer copyrights="&copy 2015 Copyright Text"
+	moreLinks={
+		<a className="grey-text text-lighten-4 right" href="#!">More Links</a>
+	}
+	links={
+		<ul>
+			<li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
+			<li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
+			<li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
+			<li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
+		</ul>
+	}
+	className='example'>
+		<h5 className="white-text">Footer Content</h5>
+		<p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+</Footer>
   );
 }
 
-export default withStyles(Footer, s);
+export default withStyles(Custom_Footer, s);

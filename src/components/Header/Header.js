@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { Button, Card, Row, Col } from 'react-materialize';
+import { Button, Card, Row, Col, Icon } from 'react-materialize';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.scss';
 import Link from '../Link';
